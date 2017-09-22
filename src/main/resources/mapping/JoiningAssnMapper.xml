@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="neu.dao.JoiningAssnDao" >
+  <resultMap id="BaseResultMap" type="neu.entity.JoiningAssn" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <id column="userid" property="userid" jdbcType="BIGINT" />
+    <id column="assnid" property="assnid" jdbcType="BIGINT" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="endtime" property="endtime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+  </resultMap>
+
+  <select id="queryById" resultMap="BaseResultMap">
+    select * from joiningassn where id = #{id}
+  </select>
+
+  <select id="queryByUserid" resultMap="BaseResultMap">
+    select * from joiningassn
+    where userid = #{userid}
+  </select>
+
+  <select id="queryByAssnid" resultMap="BaseResultMap">
+    select * from joiningassn
+    where assnid = #{assnid}
+  </select>
+
+  <select id="queryByTime" resultMap="BaseResultMap">
+    select * from joiningassn
+    where createtime > #{createtime}
+  </select>
+
+  <delete id="deleteById" >
+    delete from joiningassn
+    where id = #{id}
+  </delete>
+
+  <insert id="add" parameterType="neu.entity.JoiningAssn" >
+    insert into joiningassn (userid, assnid,
+      createtime, endtime, status
+      )
+    values ( #{userid,jdbcType=BIGINT}, #{assnid,jdbcType=BIGINT},
+      #{createtime,jdbcType=TIMESTAMP}, #{endtime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}
+      )
+  </insert>
+
+  <update id="update" parameterType="neu.entity.JoiningAssn" >
+    update joiningassn
+    set createtime = #{createtime,jdbcType=TIMESTAMP},
+      endtime = #{endtime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER},
+      userid = #{userid,jdbcType=BIGINT},
+     assnid = #{assnid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

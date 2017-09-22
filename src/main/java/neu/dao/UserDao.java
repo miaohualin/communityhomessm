@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserDao {
-    User queryByUserid(int userid);
+    User queryById(long id);
 
     User queryByUsername(String username);
 
@@ -18,7 +18,7 @@ public interface UserDao {
 
     int add(User user);
 
-    boolean deleteByUserid(int userid);
+    boolean deleteById(long id);
 
     boolean update(User user);
 }

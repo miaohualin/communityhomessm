@@ -19,9 +19,9 @@ public class UserService {
     @Autowired
     private UserDao userdao;
 
-    public User queryByUserid(int userid) {
+    public User queryByUserid(long userid) {
         log.info("通过用户id:" + userid + "查询用户");
-        return userdao.queryByUserid(userid);
+        return userdao.queryById(userid);
     }
 
     public User queryByUsername(String username) {
@@ -37,20 +37,21 @@ public class UserService {
     public int add(User user){
         log.info("增加用户");
 
-        if (queryByUserid(user.getID()) != null){
+        if (queryByUsername(user.getUsername()) != null){
+            log.info("用户名为:" + user.getUsername() + "的账号已存在");
             return -2;
         }
 
         return userdao.add(user);
     }
 
-    public boolean deleteByUserid(int userid){
+    public boolean deleteByUserid(long userid){
         log.info("通过用户id:" + userid + "注销用户");
-        return userdao.deleteByUserid(userid);
+        return userdao.deleteById(userid);
     }
 
     public boolean update(User user){
-        log.info("更新id为" + user.getID() + "的用户资料");
+        log.info("更新id为" + user.getId() + "的用户资料");
         return userdao.update(user);
     }
 }

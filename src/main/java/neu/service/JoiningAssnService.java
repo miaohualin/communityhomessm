@@ -20,17 +20,17 @@ public class JoiningAssnService {
     @Autowired
     private JoiningAssnDao joiningassndao;
 
-    public JoiningAssn queryByid(int id) {
+    public JoiningAssn queryById(long id) {
         log.info("通过id:" + id + "查询加入社团类");
-        return joiningassndao.queryByid(id);
+        return joiningassndao.queryById(id);
     }
 
-    public List<JoiningAssn> queryByUserid(int userid) {
+    public List<JoiningAssn> queryByUserid(long userid) {
         log.info("通过用户id:" + userid + "查询加入社团类");
         return joiningassndao.queryByUserid(userid);
     }
 
-    public List<JoiningAssn> queryByAssnid(int assnid) {
+    public List<JoiningAssn> queryByAssnid(long assnid) {
         log.info("通过社团id:" + assnid + "查询加入社团类");
         return joiningassndao.queryByAssnid(assnid);
     }
@@ -43,20 +43,20 @@ public class JoiningAssnService {
     public int add(JoiningAssn joiningassn) {
         log.info("添加加入社团审核类");
 
-        if (queryByid(joiningassn.getAuditingid()) != null){
+        if (queryById(joiningassn.getId()) != null) {
             return -2;
         }
 
         return joiningassndao.add(joiningassn);
     }
 
-    public boolean deleteById(int id) {
+    public boolean deleteById(long id) {
         log.info("通过id:" + id + "删除加入社团类");
         return joiningassndao.deleteById(id);
     }
 
     public boolean update(JoiningAssn joiningassn) {
-        log.info("修改id为:" + joiningassn.getAuditingid() + "的加入社团类");
+        log.info("修改id为:" + joiningassn.getId() + "的加入社团类");
         return joiningassndao.update(joiningassn);
     }
 }

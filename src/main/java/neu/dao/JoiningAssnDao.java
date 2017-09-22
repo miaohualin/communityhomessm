@@ -12,17 +12,17 @@ import java.util.List;
  */
 @Repository
 public interface JoiningAssnDao {
-    JoiningAssn queryByid(int id);
+    JoiningAssn queryById(long id);
 
-    List<JoiningAssn> queryByUserid(int userid);
+    List<JoiningAssn> queryByUserid(long userid);
 
-    List<JoiningAssn> queryByAssnid(int assnid);
+    List<JoiningAssn> queryByAssnid(long assnid);
 
     List<JoiningAssn> queryByTime(Timestamp createtime);
 
     int add(JoiningAssn examine);
 
-    boolean deleteById(int id);
+    boolean deleteById(long id);
 
     boolean update(JoiningAssn examine);
 }

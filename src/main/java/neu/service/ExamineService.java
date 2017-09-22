@@ -20,12 +20,12 @@ public class ExamineService {
     @Autowired
     private ExamineDao examinedao;
 
-    public Examine queryByid(int id) {
+    public Examine queryByid(long id) {
         log.info("通过id:" + id + "查询社团审核类");
         return examinedao.queryByid(id);
     }
 
-    public List<Examine> queryByUserid(int userid) {
+    public List<Examine> queryByUserid(long userid) {
         log.info("通过用户id:" + userid + "查询社团审核类");
         return examinedao.queryByUserid(userid);
     }
@@ -45,7 +45,7 @@ public class ExamineService {
         return examinedao.add(examine);
     }
 
-    public boolean deleteById(int id) {
+    public boolean deleteById(long id) {
         log.info("通过id:" + id + "删除社团审核类");
         return examinedao.deleteById(id);
     }

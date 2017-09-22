@@ -11,15 +11,15 @@ import java.util.List;
  */
 @Repository
 public interface ExamineDao {
-    Examine queryByid(int id);
+    Examine queryByid(long id);
 
-    List<Examine> queryByUserid(int userid);
+    List<Examine> queryByUserid(long userid);
 
     List<Examine> queryAll();
 
     int add(Examine examine);
 
-    boolean deleteById(int id);
+    boolean deleteById(long id);
 
     boolean update(Examine examine);
 }

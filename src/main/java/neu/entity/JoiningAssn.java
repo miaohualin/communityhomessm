@@ -7,34 +7,34 @@ import java.sql.Timestamp;
 * 用于用户申请加入社团的审核类
 */
 public class JoiningAssn {
-    private int auditingid;
-    private int userid;
-    private int assnid;
+    private long id;
+    private long userid;
+    private long assnid;
     private Timestamp createtime;
     private Timestamp endtime;
     private int status; /*-2超时,-1拒绝,0未审核,1接受*/
 
-    public int getAuditingid() {
-        return auditingid;
+    public long getId() {
+        return id;
     }
 
-    public void setAuditingid(int auditingid) {
-        this.auditingid = auditingid;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public int getUserid() {
+    public long getUserid() {
         return userid;
     }
 
-    public void setUserid(int userid) {
+    public void setUserid(long userid) {
         this.userid = userid;
     }
 
-    public int getAssnid() {
+    public long getAssnid() {
         return assnid;
     }
 
-    public void setAssnid(int assnid) {
+    public void setAssnid(long assnid) {
         this.assnid = assnid;
     }
 
@@ -62,34 +62,28 @@ public class JoiningAssn {
         this.status = status;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        JoiningAssn that = (JoiningAssn) o;
+
+        if (id != that.id) return false;
+        if (userid != that.userid) return false;
+        return assnid == that.assnid;
+    }
+
+    @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + assnid;
-        result = prime * result + auditingid;
-        result = prime * result + userid;
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (int) (userid ^ (userid >>> 32));
+        result = 31 * result + (int) (assnid ^ (assnid >>> 32));
         return result;
     }
 
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        JoiningAssn other = (JoiningAssn) obj;
-        if (assnid != other.assnid)
-            return false;
-        if (auditingid != other.auditingid)
-            return false;
-        if (userid != other.userid)
-            return false;
-        return true;
-    }
-
     public String toString() {
-        return "JoiningAssn [auditingid=" + auditingid + ", userid=" + userid + ", assnid=" + assnid + ", createtime="
+        return "JoiningAssn [id=" + id + ", userid=" + userid + ", assnid=" + assnid + ", createtime="
                 + createtime + ", endtime=" + endtime + ", status=" + status + "]";
     }
 }

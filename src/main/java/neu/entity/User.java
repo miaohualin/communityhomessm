@@ -1,31 +1,31 @@
 package neu.entity;
 
+import java.util.List;
+import java.util.Stack;
 
-/**
- * Created by Lenovo on 2017/7/18.
- * �û���
- */
 public class User {
-    private int ID;
+    private long id;
     private String picture;
     private String name;
     private int studentid;
     private String username;
-
     private String mailbox;
     private String password;
-    private String profession;/*רҵ*/
+    private String profession;
     private String telnumber;
-    private String  birth;
-    private String gender;/*�Ա�*/
+    private String birth;
+    private String gender;
     private String school;
+    private List<Activity> useractivities;
+    private List<Community> usercommunities;
+    private List<JoiningAssn> userjoiningassns;
 
-    public int getID() {
-        return ID;
+    public long getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(long ID) {
+        this.id = ID;
     }
 
     public String getUsername() {
@@ -35,7 +35,6 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
-    
 
     public String getMailbox() {
         return mailbox;
@@ -117,32 +116,35 @@ public class User {
         this.school = school;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
 
-        User user = (User) o;
+    public List<Activity> getUseractivities() {
+        return useractivities;
+    }
 
-        if (ID != user.ID) return false;
-        if (studentid != user.studentid) return false;
+    public void setUseractivities(List<Activity> useractivities) {
+        this.useractivities = useractivities;
+    }
 
-        if (picture != null ? !picture.equals(user.picture) : user.picture != null) return false;
-        if (name != null ? !name.equals(user.name) : user.name != null) return false;
-        if (username != null ? !username.equals(user.username) : user.username != null) return false;
-        if (mailbox != null ? !mailbox.equals(user.mailbox) : user.mailbox != null) return false;
-        if (password != null ? !password.equals(user.password) : user.password != null) return false;
-        if (profession != null ? !profession.equals(user.profession) : user.profession != null) return false;
-        if (telnumber != null ? !telnumber.equals(user.telnumber) : user.telnumber != null) return false;
-        if (birth != null ? !birth.equals(user.birth) : user.birth != null) return false;
-        if (gender != null ? !gender.equals(user.gender) : user.gender != null) return false;
-        return school != null ? school.equals(user.school) : user.school == null;
+    public List<Community> getUsercommunities() {
+        return usercommunities;
+    }
+
+    public void setUsercommunities(List<Community> usercommunities) {
+        this.usercommunities = usercommunities;
+    }
+
+    public List<JoiningAssn> getUserjoiningassns() {
+        return userjoiningassns;
+    }
+
+    public void setUserjoiningassns(List<JoiningAssn> userjoiningassns) {
+        this.userjoiningassns = userjoiningassns;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "ID=" + ID +
+                "ID=" + id +
                 ", picture='" + picture + '\'' +
                 ", name='" + name + '\'' +
                 ", studentid=" + studentid +
@@ -156,5 +158,23 @@ public class User {
                 ", gender='" + gender + '\'' +
                 ", school='" + school + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (id != user.id) return false;
+        return username != null ? username.equals(user.username) : user.username == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (username != null ? username.hashCode() : 0);
+        return result;
     }
 }
