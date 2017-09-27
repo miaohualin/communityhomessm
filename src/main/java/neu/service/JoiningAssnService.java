@@ -27,17 +27,26 @@ public class JoiningAssnService {
 
     public List<JoiningAssn> queryByUserid(long userid) {
         log.info("通过用户id:" + userid + "查询加入社团类");
-        return joiningassndao.queryByUserid(userid);
+
+        List<JoiningAssn> temp = joiningassndao.queryByUserid(userid);
+
+        return temp.size() == 0 ? null : temp;
     }
 
     public List<JoiningAssn> queryByAssnid(long assnid) {
         log.info("通过社团id:" + assnid + "查询加入社团类");
-        return joiningassndao.queryByAssnid(assnid);
+
+        List<JoiningAssn> temp = joiningassndao.queryByAssnid(assnid);
+
+        return temp.size() == 0 ? null : temp;
     }
 
     public List<JoiningAssn> queryByTime(Timestamp createtime) {
         log.info("通过创建时间:" + createtime + "查询加入社团类");
-        return joiningassndao.queryByTime(createtime);
+
+        List<JoiningAssn> temp = joiningassndao.queryByTime(createtime);
+
+        return temp.size() == 0 ? null : temp;
     }
 
     public int add(JoiningAssn joiningassn) {

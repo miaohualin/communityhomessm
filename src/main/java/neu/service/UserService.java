@@ -24,6 +24,11 @@ public class UserService {
         return userdao.queryById(userid);
     }
 
+    public User queryByEmail(String mailbox) {
+        log.info("通过邮箱:" + mailbox + "查询用户");
+        return userdao.queryByEmail(mailbox);
+    }
+
     public User queryByUsername(String username) {
         log.info("通过用户名:" + username + "查询用户");
         return userdao.queryByUsername(username);

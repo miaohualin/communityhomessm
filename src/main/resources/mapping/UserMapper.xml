@@ -23,6 +23,10 @@
     select * from user where id = #{id}
   </select>
 
+  <select id="queryByEmail" resultMap="BaseResultMap">
+    select * from user where mailbox = #{mailbox}
+  </select>
+
   <select id="queryByUsername" resultMap="BaseResultMap">
     select * from user where username = #{username}
   </select>

@@ -27,12 +27,18 @@ public class ExamineService {
 
     public List<Examine> queryByUserid(long userid) {
         log.info("通过用户id:" + userid + "查询社团审核类");
-        return examinedao.queryByUserid(userid);
+
+        List<Examine> temp = examinedao.queryByUserid(userid);
+
+        return temp.size() == 0 ? null : temp;
     }
 
     public List<Examine> queryAll() {
         log.info("查询所有社团审核类");
-        return examinedao.queryAll();
+
+        List<Examine> temp = examinedao.queryAll();
+
+        return temp.size() == 0 ? null : temp;
     }
 
     public int add(Examine examine) {

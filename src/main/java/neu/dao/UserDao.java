@@ -12,6 +12,8 @@ import org.springframework.stereotype.Repository;
 public interface UserDao {
     User queryById(long id);
 
+    User queryByEmail(String mailbox);
+
     User queryByUsername(String username);
 
     User queryByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
