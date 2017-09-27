@@ -22,6 +22,7 @@ public class LoginController {
     @Autowired
     private JoiningAssnService joiningassnservice;
 
+    
     @RequestMapping("/login")
     public String getToLogin(HttpSession session) {
         if (session.getAttribute("user") == null) {

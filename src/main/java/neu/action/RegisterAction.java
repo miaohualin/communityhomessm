@@ -3,12 +3,14 @@ package neu.action;
 import javax.mail.*;
 import javax.mail.internet.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 /**
  * Created by 黄宇航 on 2017/9/23.
  */
 public class RegisterAction {
+
     private static final char[] CHARS = {'0', '1', '2', '3', '4', '5', '6', '7', '8',
             '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M',
             'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
@@ -36,7 +38,6 @@ public class RegisterAction {
                 e.printStackTrace();
             }
         }
-
         return instance;
     }
 
