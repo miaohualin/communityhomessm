@@ -10,7 +10,7 @@ CREATE TABLE commdynamic(
 id bigint NOT NULL AUTO_INCREMENT COMMENT '动态的id',
 information varchar(120) NOT NULL COMMENT '动态的内容',
 createtime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '动态创建时间',
-communityid bigint NOT NULL  COMMENT '社团的id',
+comm_id bigint NOT NULL  COMMENT '社团的id',
 PRIMARY KEY (id),
 key idxcreatetime(createtime)
 )ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8 COMMENT '社团动态表';
@@ -37,7 +37,7 @@ CREATE TABLE community(
 id bigint NOT NULL AUTO_INCREMENT COMMENT '社团的id',
 name varchar(50) NOT NULL COMMENT '社团的名字',
 email varchar(50) NOT NULL COMMENT '社团的email',
-introduction varchar(200) NOT NULL COMMENT '社团的简介',
+introduce varchar(200) NOT NULL COMMENT '社团的简介',
 school varchar(50) NOT NULL COMMENT '社团的学校',
 type varchar(50) NOT NULL COMMENT '社团的类型',
 picture varchar(50) NOT NULL COMMENT '社团的图片',

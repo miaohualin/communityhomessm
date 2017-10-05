@@ -24,7 +24,7 @@ public class ActivityDaoTest {
 	public void setUp() throws Exception {
 	}
 
-	
+	@Test
 	public void testAddActivity() {
 		Activity activity = new Activity();
 		activity.setCommID(1000);

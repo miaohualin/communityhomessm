@@ -6,33 +6,40 @@ public class CommDynamic {
 	private int id;
 	private String information;
 	private Date createTime;
-	private int CommID;
-	public int getCommID() {
-		return CommID;
+	private int commId;
+
+	public int getCommId() {
+		return commId;
 	}
-	public void setCommID(int commID) {
-		CommID = commID;
+
+	public void setCommId(int commId) {
+		this.commId = commId;
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getInformation() {
 		return information;
 	}
+
 	public void setInformation(String information) {
 		this.information = information;
 	}
+
 	public Date getCreateTime() {
 		return createTime;
 	}
+
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
-	
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -40,6 +47,7 @@ public class CommDynamic {
 		result = prime * result + id;
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -53,10 +61,11 @@ public class CommDynamic {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "CommDynamic [id=" + id + ", information=" + information + ", createTime=" + createTime + ", CommID="
-				+ CommID + "]";
+				+ commId + "]";
 	}
-	
+
 }

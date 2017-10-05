@@ -3,53 +3,68 @@ package neu.entity;
 public class Community {
 	private int id;
 	private String name;
-	private String Email;
+	private String email;
 	private String introduce;
 	private String school;
 	private String type;
 	private String picture;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getEmail() {
-		return Email;
+		return email;
 	}
+
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
+
 	public String getIntroduce() {
 		return introduce;
 	}
+
 	public void setIntroduce(String introduce) {
 		this.introduce = introduce;
 	}
+
 	public String getSchool() {
 		return school;
 	}
+
 	public void setSchool(String school) {
 		this.school = school;
 	}
+
 	public String getType() {
 		return type;
 	}
+
 	public void setType(String type) {
 		this.type = type;
 	}
+
 	public String getPicture() {
 		return picture;
 	}
+
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -57,6 +72,7 @@ public class Community {
 		result = prime * result + id;
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -70,9 +86,10 @@ public class Community {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
-		return "Community [id=" + id + ", name=" + name + ", Email=" + Email + ", introduce="
-				+ introduce + ", school=" + school + ", type=" + type + ", picture=" + picture + "]";
+		return "Community [id=" + id + ", name=" + name + ", Email=" + email + ", introduce=" + introduce + ", school="
+				+ school + ", type=" + type + ", picture=" + picture + "]";
 	}
 }
