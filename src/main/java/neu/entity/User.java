@@ -1,5 +1,6 @@
 package neu.entity;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Stack;
 
@@ -13,9 +14,9 @@ public class User {
     private String password;
     private String profession;
     private String telnumber;
-    private String birth;
     private String gender;
     private String school;
+    private Timestamp birth;
     private List<Activity> useractivities;
     private List<Community> usercommunities;
     private List<JoiningAssn> userjoiningassns;
@@ -68,11 +69,11 @@ public class User {
         this.telnumber = telnumber;
     }
 
-    public String getBirth() {
+    public Timestamp getBirth() {
         return birth;
     }
 
-    public void setBirth(String birth) {
+    public void setBirth(Timestamp birth) {
         this.birth = birth;
     }
 

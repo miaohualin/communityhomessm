@@ -59,4 +59,27 @@ public class LoginController {
 
         return "homepage";
     }
+
+    @RequestMapping("adminlogin")
+    public String getToLogIn(HttpSession session) {
+        Object obj = session.getAttribute("admin");
+
+        if (obj != null && obj.toString().equals("1")) {
+            return "admin";
+        } else {
+            return "adminlogin";
+        }
+    }
+
+    @RequestMapping("checkadmin")
+    @ResponseBody
+    public String checkAdmin(@RequestParam("username") String username, @RequestParam("password") String password,
+                             HttpSession session) {
+        if (!username.equals("neuadmin") || !password.equals("neuone")) {
+            return "error";
+        } else {
+            session.setAttribute("admin", 1);
+            return "pass";
+        }
+    }
 }

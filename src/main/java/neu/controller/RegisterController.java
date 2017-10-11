@@ -36,12 +36,12 @@ public class RegisterController {
                                 @RequestParam("email") String email, @RequestParam("university") String university,
                                 @RequestParam("usercode") String usercode, HttpSession session) {
         if (session.getAttribute("user") != null) {
-            return "error";
+            return "islogin";
         }
 
         String emailcode;
         try {
-            emailcode = session.getAttribute("code").toString();
+            emailcode = session.getAttribute("emailcode").toString();
         } catch (Exception e) {
             return "error";
         }
@@ -50,14 +50,18 @@ public class RegisterController {
             return "codeerror";
         } else {
             User user = new User();
-            int result;
 
             user.setUsername(username);
             user.setPassword(password);
             user.setMailbox(email);
             user.setSchool(university);
+            user.setPicture("default.jpg");
+            user.setProfession("");
+            user.setTelnumber("");
+            user.setGender("");
+            user.setName("");
 
-            result = userservice.add(user);
+            int result = userservice.add(user);
 
             if (result == -2) {
                 return "exist";
