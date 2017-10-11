@@ -29,11 +29,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="database.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sql/database.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="457">
+              <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/neu/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
-              <caret line="70" column="9" lean-forward="false" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
+              <caret line="72" column="5" lean-forward="false" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/neu/controller/RegisterController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1770">
-              <caret line="90" column="12" lean-forward="false" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="12" />
+              <caret line="88" column="12" lean-forward="false" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/regist.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="312">
-              <caret line="214" column="52" lean-forward="true" selection-start-line="214" selection-start-column="20" selection-end-line="214" selection-end-column="52" />
+              <caret line="214" column="52" lean-forward="false" selection-start-line="214" selection-start-column="20" selection-end-line="214" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -126,11 +136,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/java/neu/entity/User.java" />
-        <option value="$PROJECT_DIR$/src/sql/database.sql" />
         <option value="$PROJECT_DIR$/src/main/java/neu/controller/RegisterController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/regist.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminlogin.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/neu/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/sql/database.sql" />
       </list>
     </option>
   </component>
@@ -265,7 +275,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="neu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="communityhome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="communityhome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="neu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1242,7 +1282,7 @@
       <workItem from="1506040120498" duration="9154000" />
       <workItem from="1506471640955" duration="1693000" />
       <workItem from="1507719716291" duration="1760000" />
-      <workItem from="1507725600393" duration="2717000" />
+      <workItem from="1507725600393" duration="2936000" />
     </task>
     <servers />
   </component>
@@ -1279,7 +1319,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30292000" />
+    <option name="totallyTimeSpent" value="30511000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1635,14 +1675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sql/database.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="165" column="31" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/neu/service/ServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1075">
@@ -1670,7 +1702,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/neu/controller/RegisterController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1770">
-          <caret line="90" column="12" lean-forward="false" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="12" />
+          <caret line="88" column="12" lean-forward="false" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1680,7 +1712,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/regist.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
-          <caret line="214" column="52" lean-forward="true" selection-start-line="214" selection-start-column="20" selection-end-line="214" selection-end-column="52" />
+          <caret line="214" column="52" lean-forward="false" selection-start-line="214" selection-start-column="20" selection-end-line="214" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -1696,10 +1728,18 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/neu/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
-          <caret line="70" column="9" lean-forward="false" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
+          <caret line="72" column="5" lean-forward="false" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sql/database.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -37,7 +37,7 @@ CREATE TABLE community(
   id bigint NOT NULL AUTO_INCREMENT COMMENT '社团的id',
   name varchar(50) NOT NULL COMMENT '社团的名字',
   email varchar(50) NOT NULL COMMENT '社团的email',
-  introduction varchar(200) NOT NULL COMMENT '社团的简介',
+  introduce varchar(200) NOT NULL COMMENT '社团的简介',
   school varchar(50) NOT NULL COMMENT '社团的学校',
   type varchar(50) NOT NULL COMMENT '社团的类型',
   picture varchar(50) NOT NULL COMMENT '社团的图片',
@@ -54,7 +54,7 @@ CREATE TRIGGER deletetocommdynamic after DELETE ON community FOR EACH ROW delete
 
 -- 插入数据
 -- 这个触发器是富润峰第一次发现要一行一行执行的触发器所以之前可能存在问题
-insert into community(name,email,introduction,school,type,picture)
+insert into community(name,email,introduce,school,type,picture)
 values
   ('吉他社','m15211122240@163.com','弹吉他','东北大学','吉他','image/j.jpg'),
   ('科协','m15211122240@163.com','爱吉他的人','东北大学','社团','image/j.jpg'),
@@ -164,12 +164,12 @@ CREATE TABLE user(
   password varchar(16) NOT NULL COMMENT '密码',
   picture varchar(70) NOT NULL COMMENT '图片地址',
   name varchar(16) NOT NULL COMMENT '名字',
-  studentid int NOT NULL DEFAULT 0 COMMENT '学号' ,
+  studentid int DEFAULT 0 COMMENT '学号',
   profession varchar(25) NOT NULL COMMENT '专业',
   telnumber varchar(25) NOT NULL COMMENT '电话',
+  birth timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '生日',
   gender varchar(25) NOT NULL COMMENT '性别',
   school varchar(25) NOT NULL COMMENT '学校',
-  birth timestamp NOT NULL COMMENT '生日' DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
   key idxuse(username),
   key idxpas(password)
@@ -179,7 +179,7 @@ values
   ("test","m15211122540@163.com","password1","image/11.jpg","阿是三",20165122,"英件","15245278912","20160801","男","鞍山七中"),
   ("test2","m15211122240@163.com","password","image/1.jpg","阿三",20165142,"软件","15245678912","20160809","男","鞍山八中"),
   ("test1","m15214122240@163.com","pssword","image/12.jpg","阿三是",20165122,"功课","15245278912","20160109","男","鞍山九中");
-select * from user;
+select *from user;
 
 
 CREATE TABLE hobbyuser(

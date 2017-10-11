@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="neu.dao.CommunityDao" >
+
+  <select id="queryById" resultType="neu.entity.Community" >
+    select * from Community where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="queryByName" resultType="neu.entity.Community" >
+    select * from Community where name =#{name}
+  </select>
+  
+  <delete id="deleteCommunity" >
+    delete from Community where id = #{id,jdbcType=BIGINT}
+  </delete>
+
+  <insert id="addCommunity" parameterType="neu.entity.Community" >
+	insert into community(name,email,introduce,school,type,picture) values (#{name},#{email},#{introduce},#{school},#{type},#{picture})
+  </insert>
+  
+  <insert id="addUser" parameterType="neu.entity.User" >
+		
+  </insert>
+<!--    <update id="updateActivity" parameterType="neu.entity.Activity" >
+    update activity
+    set commID = #{commID},
+      start_time = #{startTime},
+      email = #{email,jdbcType=VARCHAR},
+      introduction = #{introduction},
+      school = #{school},
+      type = #{type},
+      picture = #{picture},
+      createtime = #{createtime},
+      status = #{status}
+    where id = #{id}
+  </update>-->
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="neu.dao.ActivityDao" >
+
+  <select id="queryByid" resultType="neu.entity.Activity" >
+    select * from activity where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="queryAll" resultType="neu.entity.Activity" >
+    select * from activity
+  </select>
+  <select id="queryByTheme" resultType="neu.entity.Activity" >
+    select * from activity where theme LIKE BINARY "%"#{theme}"%"
+  </select>
+  <select id="queryAllUsers" resultType="neu.entity.User" >
+    select * from activity
+  </select>    
+  <delete id="deleteActivity" >
+    delete from activity where id = #{id,jdbcType=BIGINT}
+  </delete>
+
+  <insert id="addActivity" parameterType="neu.entity.Activity" >
+insert into activity(commID,start_time,end_time,content,phone,picture,theme,introduction,name) values (#{commID},#{starttime},#{endtime},#{content},#{phone},#{picture},#{theme},#{introduction},#{name})
+  </insert>
+
+<!--    <update id="updateActivity" parameterType="neu.entity.Activity" >
+    update activity
+    set commID = #{commID},
+      start_time = #{startTime},
+      email = #{email,jdbcType=VARCHAR},
+      introduction = #{introduction},
+      school = #{school},
+      type = #{type},
+      picture = #{picture},
+      createtime = #{createtime},
+      status = #{status}
+    where id = #{id}
+  </update>-->
+</mapper>
