@@ -5,7 +5,9 @@ import neu.service.JoiningAssnService;
 import neu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -22,20 +24,38 @@ public class LoginController {
     @Autowired
     private JoiningAssnService joiningassnservice;
 
-    
+    @RequestMapping("/")
+    public String deafultPage() {
+        return "redirect:/index";
+    }
+
+    @RequestMapping("/index")
+    public String getToIndex(HttpSession session, Model model) {
+        if (session.getAttribute("user") == null) {
+            model.addAttribute("indexmsg", "登录");
+            model.addAttribute("indexurl", "/login");
+        } else {
+            model.addAttribute("indexmsg", "退出");
+            model.addAttribute("indexurl", "/logout");
+        }
+
+        return "index";
+    }
+
     @RequestMapping("/login")
     public String getToLogin(HttpSession session) {
         if (session.getAttribute("user") == null) {
             return "login";
         } else {
-            return "homepage";
+            return "redirect:/index";
         }
     }
 
     @RequestMapping("/checklogin")
     @ResponseBody
     public String checkLogin(@RequestParam("username") String username, @RequestParam("password") String password,
-                             @RequestParam("usercode") String usercode, HttpSession session) {
+                             HttpSession session) {
+        //@RequestParam("usercode") String usercode,
         if (session.getAttribute("user") != null) {
             return "error";
         }
@@ -58,7 +78,7 @@ public class LoginController {
     public String logout(HttpSession session) {
         session.removeAttribute("user");
 
-        return "homepage";
+        return "redirect:/index";
     }
 
     @RequestMapping("adminlogin")

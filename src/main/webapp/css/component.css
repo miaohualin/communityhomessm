@@ -32,26 +32,6 @@
 	line-height: 20px;
 	padding:0 0 35px 0; 
 }
-.regist_box{
-	width: 400px;
-	height: 500px;
-	padding: 35px;
-	color: #EEE;
-	position: absolute;
-	left: 50%;
-	top:50%;
-	margin-left: -200px;
-	margin-top: -400px;
-}
-.regist_box h3{
-	text-align: center;
-	height: 20px;
-	font: 20px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
-	color: #FFFFFF;
-	height: 20px;
-	line-height: 20px;
-	padding:0 0 35px 0;
-}
 .forms{
 	width: 280px;
 	height: 485px;
@@ -74,7 +54,7 @@
 	width: 25px;
 	height: 25px;
 	background: url(../img/login_ico.png);
-	background-position:  -125px 0px;
+	background-position:  -125px 0;
 	position: absolute;
 	margin: 10px 13px;
 }
@@ -85,51 +65,6 @@
 	background-position: -125px -34px;
 	position: absolute;
 	margin: 10px 13px;
-}
-.checkcode{
-	width: 25px;
-	height: 25px;
-	background-image: url(../img/login_ico.png);
-	background-position: -124px -211px;
-	position: absolute;
-	margin: 10px 13px;
-}
-.email{
-	width: 25px;
-	height: 25px;
-	background-image: url(../img/login_ico.png);
-	background-position: -85px -0px;
-	position: absolute;
-	margin: 10px 13px;
-}
-#imghead5{
-    position:relative;
-    top:5px;
-}
-.university{
-	width: 25px;
-	height: 25px;
-	background-image: url(../img/login_ico.png);
-	/*background-position: -85px -158px;*/
-    background-position: -84px -34px;
-	position: absolute;
-	margin: 10px 13px;
-}
-.introduce{
-	width: 25px;
-	height: 25px;
-	background-image: url(../img/login_ico.png);
-	background-position: -85px -158px;
-	position: absolute;
-	margin: 10px 13px;
-}
-.type{
-    width: 25px;
-    height: 25px;
-    background-image: url(../img/login_ico.png);
-    background-position: -124px -211px;
-    position: absolute;
-    margin: 10px 13px;
 }
 .l-login{
 	position: absolute;
